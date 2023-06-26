@@ -1,0 +1,53 @@
+{% extends 'base_template.html' %}
+{% block title %} Registrar Asistencia {% endblock %}
+{% block body %}
+
+    <h1>Registrar Asistencia - Año: {{ curso.anio }}°, División: {{ curso.division }}</h1>
+
+    <form method="POST">
+
+        <label for="clase">Clase:</label>
+
+        <select name="clase" required>
+            <option value="1">Aula</option>
+            <option value="2">Educación Física</option>
+        </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Asistencia</th>
+                    <th>Justificación</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for estudiante in estudiantes %}
+                    <tr>
+                        <td>{{ estudiante.nombre }}</td>
+                        <td>{{ estudiante.apellido }}</td>
+                        <td>
+                            <select name="asistencia_{{ estudiante.id }}">
+                                <option value="s">Sí</option>
+                                <option value="n">No</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" name="justificacion_{{ estudiante.id }}" placeholder="Justificación">
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <input type="submit" value="Guardar Asistencia">
+    </form>
+
+<a href="{{ url_for('preceptor_home') }}" class="btn btn-primary", >Volver al inicio</a>
+
+{% endblock %}
+

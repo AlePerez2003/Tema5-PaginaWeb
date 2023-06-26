@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+  </head>   
+   <body>     
+	 <h1> Bienvenido Prece {{ usuario.nombre }}! </h1>
+	  <ul>
+      <li> <a href = "{{ url_for('registrar_asistencia') }}"> Registrar asistencia de un curso </a></li><br>
+
+    	<li> <a href = "{{ url_for('obtener_informe_detallado') }}"> Obtener informe de asistencia </a></li><br>	
+	 </ul>
+   </body>
+</html>
+

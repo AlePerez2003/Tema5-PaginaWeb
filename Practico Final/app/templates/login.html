@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <h1>Iniciar Sesion</h1>
+    <hr/>  
+        <form action = "{{ request.path }}" method = "post" class="container">
+            <label for = "email">Ingrese su correo</label><br>
+            <input type = "text" name = "email" placeholder = "correo" /><br> 		 
+            <label for = "password">Ingrese su contraseña</label><br>
+            <input type = "password" name = "password" placeholder = "contraseña"/><br>		 
+            <label for = "user_type">Ingrese su rol (preceptor o padre)</label><br>
+            <input type = "user_type" name = "user_type" placeholder = "tipo de ususario"/><br>		 
+
+            <br>
+            <input type = "submit" value = "Iniciar sesión"/>
+
+        </form>
+{% endblock %}
+

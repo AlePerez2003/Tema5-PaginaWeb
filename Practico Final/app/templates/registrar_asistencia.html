@@ -1,0 +1,18 @@
+{% extends 'base_template.html' %}
+
+{% block tittle %}Registrar asistencia{% endblock %}
+
+{% block body %}
+<h2>Registrar Asistencia</h2>
+    <form action="{{ request_path }}" method="POST" class="container">
+        <label for="curso">Cursos</label><br>
+        <select id="curso" name="curso" width="500px"><br>
+            {% for curso in usuariourso %}
+                <option value="{{ curso.id }}">Año:{{ curso.anio }} Division:{{ curso.division }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Confirmar"/><br>
+     </form>
+
+{% endblock %}
+</html>

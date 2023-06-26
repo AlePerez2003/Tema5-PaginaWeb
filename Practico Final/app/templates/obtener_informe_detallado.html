@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Lista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+   </head>   
+   <body>     
+	 <h1>Cursos del Preceptor:</h1>
+    <form action = "{{ request.path }}" method = "post" class="container">
+      <select id= "cursos" name="cursos" width="500px" >
+         {% for curso in preceptor.cursos %}
+             <option value="{{ curso.id }}"> {{ curso.anio }}° {{ curso.division }}°</option>
+         {% endfor %}
+      </select>
+      <input type = "submit" value = "Confirmar"><br>
+   </body>
+</form>
+</html>

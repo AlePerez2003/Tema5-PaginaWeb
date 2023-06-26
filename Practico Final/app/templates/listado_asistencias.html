@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+   </head>   
+   <body>     
+	 <h1>Asistencias de Estudiantes</h1>
+    <article action = "{{ request.path }}" method = "post" class="container">
+         {% for asistencia in informe %}
+         <label for="estudiante"> {{ asistencias[0] }} </label> <br>
+         <label for="asistencia">Clases de aula presente: {{ asistencias[1] }}</label> <br>
+         <label for="asistencia">Clases de aula ausente justificadas: {{ asistencias[2] }}</label> <br>
+         <label for="asistencia">Clases de aula ausente injustificadas: {{ asistencias[3] }}</label> <br>
+         <label for="asistencia">Clases de educación física presente: {{ asistencias[4] }}</label> <br>
+         <label for="asistencia">Clases de educación física ausente justificadas: {{ asistencias[5] }}</label> <br>
+         <label for="asistencia">Clases de educación física ausente injustificadas: {{ asistencias[6] }}</label> <br>
+         <label for="asistencia">Cantidad total de inasistencias: {{ asistencias[7] }}
+         {% endfor %}
+   </body>
+</article>
+</html>
